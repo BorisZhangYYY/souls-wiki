@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>余烬法典 · 魂系世界观维基 | THE ASHEN CODEX</title>
+<meta name="description" content="余烬法典：收录黑暗之魂三部曲、艾尔登法环、只狼、血源诅咒的作品剧情、重要人物、标志性器物与世界观设定的中文资料索引。">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Noto+Serif+SC:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="site-head"></div>
+
+<section class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">A COMPENDIUM OF ASH &amp; BLOOD</div>
+    <h1>余烬法典</h1>
+    <div class="sub-en">THE ASHEN CODEX</div>
+    <p class="quote">「有一天，燃起了第一团火。」<br>而后的岁月里，有人传火，有人盗国，有人以血疗疾，有人仰望黄金树。<br><em>此书记下那些不该被灰烬掩埋的名字。</em></p>
+    <div class="hero-actions">
+      <a class="btn" href="works.html">翻开六部作品 <span>✦</span></a>
+      <a class="btn ghost" href="characters.html">检索人物志</a>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL<span></span></div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-in" id="stats"></div>
+</section>
+
+<section class="section" id="works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">THE SIX CHRONICLES</div>
+      <h2>六部作品</h2>
+      <p>黑暗之魂三部曲、《艾尔登法环》、《只狼：影逝二度》、《血源诅咒》。每一部都是一扇门，通向同一个反复被追问的问题。</p>
+      <div class="orn"><i></i><b></b><i></i></div>
+    </div>
+    <div class="work-grid" id="workGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section alt">
+  <div class="wrap manifesto">
+    <div class="reveal">
+      <div class="kicker mono" style="color:var(--gold-d);letter-spacing:.4em;font-size:11px">ON THESE WORLDS</div>
+      <p class="big-q">「火会熄灭，国将陷落，血会腐坏，树会枯萎。<br>唯独<em>故事</em>，被一遍遍写在道具的背面。」</p>
+    </div>
+    <div class="reveal">
+      <p>这些作品几乎不把剧情讲给你听。它们把历史压进武器说明、把结局藏进一段 NPC 的咳嗽、把神话拆成地图上一座无人问津的废墟。于是「查阅」本身成了游玩的一部分——这也是本站以维基形式编纂的原因。</p>
+      <p style="margin-top:14px">本站收录六部作品的剧情脉络、重要人物、剧情上分量十足的器物，以及贯穿各作的母题辞条；中文名一律附英文原名以消歧，推论性内容均明确标注。</p>
+      <div class="lore-list" id="homeThemes"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">A CHRONICLE OF RELEASES</div>
+      <h2>现实年表</h2>
+      <p>从 2011 年第一团火，到 2024 年的幽影之地。</p>
+      <div class="orn"><i></i><b></b><i></i></div>
+    </div>
+    <div class="timeline" id="homeTimeline"></div>
+  </div>
+</section>
+
+<section class="section alt tight">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">INDEX</div><h2>按图索骥</h2><div class="orn"><i></i><b></b><i></i></div></div>
+    <div class="card-grid">
+      <a class="entity reveal" href="characters.html" style="min-height:170px"><div class="wk">PERSONAE</div><h3>人物志</h3><div class="en">CHARACTERS</div><div class="role">薪王 · 半神 · 猎人 · 忍者</div><p class="desc">按作品筛选、按中英名检索，收录神祇、王者、骑士与那些只在支线里出现一瞬的人。</p><div class="more">进入 →</div></a>
+      <a class="entity reveal" href="equipment.html" style="min-height:170px"><div class="wk">RELICS</div><h3>器物志</h3><div class="en">EQUIPMENT &amp; RELICS</div><div class="role">传说武器 · 秘剑 · 关键道具</div><p class="desc">月光大剑的五次转生、不死斩、暗月大剑、三分之一脐带——每一件都是一段被锻成钢的历史。</p><div class="more">进入 →</div></a>
+      <a class="entity reveal" href="lore.html" style="min-height:170px"><div class="wk">COSMOLOGY</div><h3>世界观辞典</h3><div class="en">LORE &amp; MOTIFS</div><div class="role">火 · 血 · 律法 · 不死</div><p class="desc">初始之火、深渊、灵视、黄金律法、龙胤与碎片化叙事：把六部作品放在一起读。</p><div class="more">进入 →</div></a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<div class="modal" id="modal"><div class="modal-bg"></div><div class="modal-box" id="modalBox"></div></div>
+<script src="assets/js/data-works.js"></script>
+<script src="assets/js/data-characters-1.js"></script>
+<script src="assets/js/data-characters-2.js"></script>
+<script src="assets/js/data-equipment.js"></script>
+<script src="assets/js/data-lore.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

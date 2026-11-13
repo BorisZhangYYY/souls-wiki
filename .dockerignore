@@ -1,0 +1,7 @@
+deploy/
+.git/
+.DS_Store
+Dockerfile
+.dockerignore
+_viewport.html
+*.md

@@ -1,0 +1,81 @@
+/* 余烬法典 — 器物志：剧情与设定上最具分量的武器、防具与关键道具 */
+const EQUIPMENT = [
+  /* ── 黑暗之魂 1 ── */
+  { id: "ds1-moonlight", work: "ds1", name: "月光大剑", en: "Moonlight Greatsword", type: "大剑 · 魔法", origin: "结晶洞穴斩断白龙希斯的尾端", desc: "纯魔法伤害的大剑，重击可放出「月光激流」。它是整个 FromSoftware 的传家符号：最早出现于 1994 年的《国王密令》，此后在黑魂三部曲、《血源诅咒》与《艾尔登法环》中以不同名字反复登场。" },
+  { id: "ds1-artorias-gs", work: "ds1", name: "亚尔特留斯大剑", en: "Greatsword of Artorias", type: "大剑 · 神圣/深渊", origin: "DLC 以亚尔特留斯的灵魂与剑锻造", desc: "剑身缠绕着与深渊订下的契约，能同时伤及深渊之物。道具说明写着它「只为亚尔特留斯一人而存在」，是这位骑士被神话化的物证；而 DLC 恰恰亲手拆穿了这则神话。" },
+  { id: "ds1-abyss-gs", work: "ds1", name: "深渊大剑", en: "Abyss Greatsword", type: "特大剑 · 人性", origin: "DLC 以马努斯的灵魂锻造", desc: "由「深渊之父」人性凝结而成的扭曲巨剑，攻击依人性数值补正。它与亚尔特留斯大剑构成一组镜像：一把为封印深渊而生，一把即是深渊本身。" },
+  { id: "ds1-artorias-shield", work: "ds1", name: "亚尔特留斯大盾", en: "Greatshield of Artorias", type: "大盾 · 结界", origin: "DLC 基亚兰相关", desc: "传说中让亚尔特留斯得以「漫步深渊」的结界之盾，可完全挡下物理与多数属性伤害。盾面的纹章后来成为「狼」这一意象在系列中的视觉源头。" },
+  { id: "ds1-wolf-ring", work: "ds1", name: "狼戒指", en: "Wolf Ring", type: "戒指", origin: "DLC 与基亚兰相关的支线", desc: "大幅提升韧性、使持有者不易被打出硬直的戒指，与亚尔特留斯的「狼」之名绑定。到了黑魂 3，它被法兰不死队继承为「狼血」的象征。" },
+  { id: "ds1-chaos-blade", work: "ds1", name: "混沌之刃", en: "Chaos Blade", type: "刀 · 混沌", origin: "以混沌之女克拉格的灵魂强化武器", desc: "以恶魔之魂铸成的刀，挥砍时会反噬持有者自身的血。它把伊札里斯魔女一族的悲剧写进了数值：追求火焰的力量，必然要付出代价。" },
+  { id: "ds1-bk-gs", work: "ds1", name: "黑骑士大剑", en: "Black Knight Greatsword", type: "大剑", origin: "黑骑士随机掉落", desc: "曾随葛温征讨恶魔、被混沌之火灼成炭黑的骑士所留之剑，对恶魔系敌人有额外加成。整套黑骑士装备是「火之时代战争」最直观的遗物。" },
+  { id: "ds1-havel", work: "ds1", name: "哈维尔套装与哈维尔戒指", en: "Havel's Set / Havel's Ring", type: "防具 · 戒指", origin: "亚诺尔隆德旋转楼梯下的隐藏房间等", desc: "以岩石般厚重铠甲与超高韧性著称，戒指大幅提升装备负重上限。哈维尔本人与白龙希斯、古龙战争相关，其装备在三部曲中反复出现，堪称系列最持久的彩蛋。" },
+  { id: "ds1-pharis-bow", work: "ds1", name: "法里斯黑弓", en: "Black Bow of Pharis", type: "弓", origin: "黑森林中英雄法里斯的遗体处", desc: "射程极远、以灵巧补正的黑弓。法里斯是女性英雄、也是「鹰眼戈夫」之外少数以弓留名的角色，其遗体所在之地后来成为森林誓约的守林人庭园。" },
+  { id: "ds1-astora-ss", work: "ds1", name: "亚斯特拉直剑", en: "Astora's Straight Sword", type: "直剑 · 神圣", origin: "北方不死院附近的飞龙桥下", desc: "带神圣属性、前期能对骷髅起效的直剑，与「亚斯特拉的奥斯卡」一同构成玩家对这片土地的第一印象。它是无数不死人旅程的起点。" },
+  { id: "ds1-balder-ss", work: "ds1", name: "巴勒德尔的突刺直剑", en: "Balder Side Sword", type: "突刺直剑", origin: "城外不死教区巴勒德尔骑士掉落", desc: "动作优雅、突刺性能优秀的直剑，被玩家简称为「巴刺」。其稀有掉落与出众手感，使它成为初代最具话题性的武器之一。" },
+  { id: "ds1-great-lord-gs", work: "ds1", name: "大王大剑", en: "Great Lord Greatsword", type: "大剑", origin: "以葛温的王魂或相关灵魂锻造", desc: "与「初始之火」的持有者相连的王之大剑，造型简明庄严。它与大王头盔、大王铠甲一起，把「诸神时代」的美术凝练成一套装备。" },
+
+  /* ── 黑暗之魂 II ── */
+  { id: "ds2-moonlight", work: "ds2", name: "月光大剑", en: "Moonlight Greatsword", type: "大剑 · 魔法", origin: "以「公爵的爱蛛弗蕾雅」之古龙灵魂兑换（需强化营火再战）", desc: "依旧是纯魔法大剑，重击放出月光波。获取条件刻意繁琐：须用「营火探究者」强化辉石镇营火、重打蜘蛛，才拿得到那份古龙之魂。" },
+  { id: "ds2-fume-ugs", work: "ds2", name: "烟特大剑", en: "Fume Ultra Greatsword", type: "特大剑", origin: "《老铁王之冠》以烟之骑士雷姆的灵魂兑换", desc: "与娜德拉黑雾同化的巨剑，可格挡并反弹部分攻击。雷姆为求力量而来、最终得到的却是「母姓之力」，这柄剑就是那场错位的纪念。" },
+  { id: "ds2-alonne-katana", work: "ds2", name: "亚伦之刀", en: "Sir Alonne's Katana", type: "刀", origin: "《老铁王之冠》以骑士亚伦的灵魂兑换", desc: "东方武士亚伦所用的长刀，自刃式的收刀动作与高补正闻名。道具说明里那句「不继承父姓，而继承母姓」的译文，指的其实是雷姆而非亚伦，是中文社区著名的翻译公案。" },
+  { id: "ds2-crowns", work: "ds2", name: "四顶王冠", en: "Crowns of the Lost Kings / Vendrick's Crown", type: "头部防具 · 剧情关键", origin: "三部 DLC 各一顶，加上凡克拉德之冠", desc: "集齐沉没之王、老铁王、象牙王与凡克拉德四顶王冠后，可在「巨人的记忆」中请国王祝福：戴上时缓慢恢复人性、暂时抑制游魂化。这是全系列唯一一件「能对抗诅咒、却不能治愈诅咒」的装备组。" },
+  { id: "ds2-watcher-gs", work: "ds2", name: "咒缚者大剑", en: "Watcher Greatsword", type: "大剑", origin: "以咒缚者的灵魂兑换", desc: "由那位不断复现、反复考验玩家的「咒缚者」之魂所铸，双持重击可击出冲击波。它提醒玩家：本作的敌人配置本身就是叙事的一部分。" },
+  { id: "ds2-ruler-sword", work: "ds2", name: "统治者之剑", en: "Ruler's Sword", type: "直剑", origin: "以凡克拉德王的灵魂兑换", desc: "威力随持有者所持灵魂数量变动的王之剑。凡克拉德曾拥有一切，最终连自己的名字都留不住——这把剑把「王权」换算成了最直白的数值。" },
+  { id: "ds2-drakewing", work: "ds2", name: "龙翼特大剑", en: "Drakewing Ultra Greatsword", type: "特大剑", origin: "以古龙灵魂兑换", desc: "以古龙之翼为刃，重击放出冲击波。黑魂 2 里古龙血脉以各种形态残存，这柄剑是「龙的时代早已结束」的物证。" },
+  { id: "ds2-chaos-blade", work: "ds2", name: "混沌之刃", en: "Chaos Blade", type: "刀", origin: "以「遗忘的罪人」之灵魂兑换", desc: "延续初代设定的自伤之刃，与试图重现混沌火焰的罪人相连。伊札里斯那场失败的造火实验，隔了一整个时代仍在灼伤人。" },
+  { id: "ds2-giants-kinship", work: "ds2", name: "巨人的共鸣", en: "Giant's Kinship", type: "关键道具", origin: "在「巨人的记忆」中击败巨人王", desc: "开启渴望王座所必需的物品。它的名字直指本作的核心命题：凡克拉德夺走巨人的力量，玩家却必须借巨人之力，去面对王座与王妃。" },
+
+  /* ── 黑暗之魂 III ── */
+  { id: "ds3-moonlight", work: "ds3", name: "月光大剑", en: "Moonlight Greatsword", type: "大剑 · 魔法", origin: "以妖王欧斯罗艾斯的灵魂兑换", desc: "蓄力重击可放出「月光波」，本作加入物理伤害。妖王为求龙化而研究白龙希斯，其灵魂铸出月光大剑，等于把「希斯—结晶—龙」的因果链又收束了一次。" },
+  { id: "ds3-wolf-knight-gs", work: "ds3", name: "狼骑士大剑", en: "Wolf Knight's Greatsword", type: "大剑", origin: "以「深渊的监视者」灵魂兑换", desc: "造型与招式全面致敬亚尔特留斯大剑，战技可复现那记翻身劈斩。道具说明把法兰不死队称作「继承狼血之人」——一个神话被制度化为军团，最终也被深渊从内部腐化。" },
+  { id: "ds3-farron-gs", work: "ds3", name: "法兰大剑", en: "Farron Greatsword", type: "特大剑", origin: "以「深渊的监视者」灵魂兑换", desc: "与左手短刃成对的不死队制式武器，战技是极具辨识度的回旋斩。它代表「共同体」而非「英雄」：一个灵魂由全体队员分享。" },
+  { id: "ds3-dragonslayer-axe", work: "ds3", name: "猎龙大斧", en: "Dragonslayer Greataxe", type: "大斧", origin: "以无名王者的灵魂兑换", desc: "召唤风暴的巨斧，与「猎龙枪、猎龙大盾」同属被抹去名号的长子一系。持有它，等于替历史把那位被除名者重新写回一行。" },
+  { id: "ds3-twin-princes-gs", work: "ds3", name: "双王子大剑", en: "Lothric and Lorian's Ultra Greatsword", type: "特大剑", origin: "以洛斯里克与洛里安双王子的灵魂兑换", desc: "由兄长的大剑与幼弟的圣剑合而为一，战技先以火后以圣光附魔。两柄剑合为一柄，正是兄弟分担同一份诅咒的物化。" },
+  { id: "ds3-friede-scythe", work: "ds3", name: "芙莉德大镰刀", en: "Sister Friede's Great Scythe", type: "大镰刀", origin: "《艾雷德尔之烬》以修女芙莉德的灵魂兑换", desc: "修女用以守护腐朽绘画世界的镰刀，战技可凝出冰霜。它与「玫瑰之鞭」同源：一个拒绝改变的世界，连武器都带着被冻住的美感。" },
+  { id: "ds3-storm-ruler", work: "ds3", name: "风暴管束者", en: "Storm Ruler", type: "大剑 · 剧情武器", origin: "罪业之都巨人尤姆的王座两侧", desc: "专为与尤姆一战而留的两柄巨剑，蓄力可召来风暴。其中一柄是洋葱骑士杰克巴尔多与尤姆约定的信物：当王彻底失控时，由老友用这阵风送他一程。" },
+  { id: "ds3-firelink-gs", work: "ds3", name: "传火大剑", en: "Firelink Greatsword", type: "大剑", origin: "以「薪王们的化身」灵魂兑换", desc: "由历代薪王残火凝成的剑，战技摆出传火之姿后唤起火焰。它是整个三部曲的「结算道具」：所有失败与牺牲，最后被锻成一柄可握在手里的剑。" },
+  { id: "ds3-sunlight-ss", work: "ds3", name: "太阳直剑", en: "Sunlight Straight Sword", type: "直剑", origin: "洛斯里克高墙", desc: "战技「赞美太阳」以最克制的方式向索拉尔与太阳战士致敬。没有台词、没有 NPC，一个抬手动作就足以让老玩家会心一笑。" },
+  { id: "ds3-dark-sword", work: "ds3", name: "黑暗剑", en: "Dark Sword", type: "直剑", origin: "吸魂相关的敌人掉落", desc: "因高伤害与优秀的补正成为本作玩家社群中极具代表性的直剑。其名「黑暗」与「余灰」的处境相呼应：连柴薪都不及的人，用的是一柄暗色的剑。" },
+
+  /* ── 艾尔登法环 ── */
+  { id: "er-darkmoon-gs", work: "er", name: "暗月大剑", en: "Dark Moon Greatsword", type: "大剑 · 魔法/霜冻", origin: "菈妮支线终章，于月光祭坛赠予", desc: "系列「月光大剑」在交界地的形态，也是「星星时代」结局的象征物。菈妮把它称作「暗月之戒的婚约信物」；玩家社群常戏称其为「老婆的嫁妆」。战技可为剑身附上月光波。" },
+  { id: "er-night-and-flame", work: "er", name: "夜与火之剑", en: "Sword of Night and Flame", type: "直剑 · 智/信", origin: "利耶尼亚·卡利亚城寨宝箱", desc: "九把「传说武器」之一，战技分别放出彗星光束与火焰横扫。道具说明称其为卡利亚王室「夜与火」双生象征的遗产，与蕾娜菈、菈妮一脉的月之魔法同源。" },
+  { id: "er-hand-of-malenia", work: "er", name: "玛莲妮亚的义手刀", en: "Hand of Malenia", type: "刀", origin: "以「腐败女神」玛莲妮亚的追忆兑换", desc: "女武神的黄金义肢所化之刀，专属战技「水鸟乱舞」是全作最著名的招式。每一次挥砍都带着猩红腐败与她「从未败过」的自称，是角色与武器高度合一的典范。" },
+  { id: "er-blasphemous-blade", work: "er", name: "亵渎圣剑", en: "Blasphemous Blade", type: "大剑 · 火", origin: "以「噬神大蛇」拉卡德的追忆兑换", desc: "由无数被吞噬者的怨念与蛇形纹路扭曲而成，战技「掠夺者之火」命中可回血。它把拉卡德「一同吞噬诸神」的宣言，做成了可挥动的实体。" },
+  { id: "er-starscourge-gs", work: "er", name: "碎星大剑", en: "Starscourge Greatsword", type: "特大剑（成对）", origin: "以「碎星」拉塔恩的追忆兑换", desc: "一对刻有狮子与重力纹样的巨剑，战技可召来陨石般的重力波。拉塔恩以重力封印群星，这双剑正是「连星辰都能拉住」的力量余响。" },
+  { id: "er-bloodhound-fang", work: "er", name: "猎犬长牙", en: "Bloodhound's Fang", type: "曲剑", origin: "宁姆格福「猎犬骑士」掉落", desc: "猎犬骑士制式的巨大曲剑，自带出血与优雅的翻身斩。虽非传说武器，却凭手感与外观成为本作人气最高的武器之一。" },
+  { id: "er-golden-order-gs", work: "er", name: "黄金律法大剑", en: "Golden Order Greatsword", type: "大剑 · 圣", origin: "巨人山顶·安身洞窟（需石剑钥匙）", desc: "九把传说武器之一，以「因果」与「回归」两条黄金律法根本铸成。摆出战技时的姿态几乎是一幅宗教画：律法本身被当成剑来挥。" },
+  { id: "er-bolt-of-gransax", work: "er", name: "古兰桑克斯的雷电", en: "Bolt of Gransax", type: "长枪 · 雷", origin: "王城罗德尔巨型长枪雕像上拾取", desc: "传说武器之一，据说是古兰桑克斯以雷击王城时留下的巨枪。王城那座雕像既是地标也是获取路径；焚烧黄金树后（部分版本）便再难取得。" },
+  { id: "er-ruins-gs", work: "er", name: "遗迹大剑", en: "Ruins Greatsword", type: "特大剑 · 重力", origin: "红狮子城击败混种骑士与熔炉骑士", desc: "以古老文明的残骸为刃，重击唤起重力井。它与「碎星」的重力魔法互相呼应，是交界地「前黄金树时代」遗留在武器上的痕迹。" },
+  { id: "er-marais-sword", work: "er", name: "玛雷家行刑剑", en: "Marais Executioner's Sword", type: "大剑", origin: "日荫城 Boss 掉落", desc: "传说武器之一，螺旋状剑身属于处刑者一族的刑具。玛雷家的处刑人与「女武神」「圣树」支线相连，是支线叙事藏进装备的典型例子。" },
+  { id: "er-eclipse-shotel", work: "er", name: "日蚀钩剑", en: "Eclipse Shotel", type: "曲剑 · 死亡", origin: "巨人山顶·索尔城日蚀教堂拾取", desc: "传说武器之一，被描述为「无日之日」的象征，能引发即死的异常状态。它指向索尔城与「死之卢恩」被从律法中剔除之后的阴影。" },
+  { id: "er-devourer-scepter", work: "er", name: "吞世权杖", en: "Devourer's Scepter", type: "大锤 · 火", origin: "习战者的破屋（贝纳尔）或其后续支线", desc: "传说武器之一，由无数被吞噬者的面孔构成，战技可大范围吸取生命。它与「火山官邸」的猎王任务线紧密相连。" },
+
+  /* ── 只狼 ── */
+  { id: "sk-kusabimaru", work: "sekiro", name: "楔丸", en: "Kusabimaru", type: "忍者刀", origin: "九郎于望月楼归还", desc: "九郎交给狼的短刀，随剧情贯穿始终。它没有任何数值成长——本作把「变强」全部交给了玩家自己与忍义手，这柄刀因此格外像一句承诺。" },
+  { id: "sk-mortal-blade-red", work: "sekiro", name: "不死斩 · 拜泪", en: "Mortal Blade (Red)", type: "秘剑 · 仪式关键", origin: "仙峰寺内殿，由变若之子守护", desc: "传说中能斩杀不死者的红色之刃，却会杀死拔刀者；只有身负龙胤的狼能承受。其战技「不死斩」可斩断不死的因果，是「断绝不死」仪式的第一要件。" },
+  { id: "sk-mortal-blade-black", work: "sekiro", name: "不死斩 · 开门", en: "Black Mortal Blade", type: "秘剑 · 仪式关键", origin: "弦一郎自源之宫取得", desc: "黑色的另一把不死斩，能「开门」唤回死者。弦一郎以它献祭自身，复活壮年苇名一心；它把「不死」从诅咒变成了最后一次、也是最沉重的一次许愿。" },
+  { id: "sk-prosthetic", work: "sekiro", name: "忍义手", en: "Shinobi Prosthetic", type: "义肢 / 忍具系统", origin: "佛雕师（猩）自用的旧物", desc: "接在只狼断臂上的机关义肢，可装入手里剑、斧、吹火筒、机关伞、锈丸、神隐、指哨等忍具。它既是战斗系统，也是叙事：佛雕师把自己没能放下的过去，交给了下一代。" },
+  { id: "sk-sabimaru", work: "sekiro", name: "锈丸", en: "Sabimaru", type: "忍具 · 毒刀", origin: "苇名一带取得，由佛雕师装配", desc: "藏在义手中的短刃，涂抹使敌人中毒的锈毒。对淤加美族、附虫者等「扭曲不死」尤其有效——毒，是这不死之国里少有的解法。" },
+  { id: "sk-umbrella", work: "sekiro", name: "机关伞", en: "Loaded Umbrella", type: "忍具 · 防御", origin: "由破旧寺院装配", desc: "可张开挡下攻击并积攒「架势」的铁伞，衍生出紫伞（挡异端之伤）等变体。它把本作的核心「弹反」从刀刃扩展成了器具。" },
+  { id: "sk-divine-abduction", work: "sekiro", name: "神隐", en: "Divine Abduction", type: "忍具 · 幻术", origin: "源之宫相关忍具", desc: "扬起金粉使敌人转身、迷失方向的忍具，在樱龙战中用于制造破绽。名字里那个「神」字，正对应源之宫那群自称神明的存在。" },
+  { id: "sk-finger-whistle", work: "sekiro", name: "爱哭鬼的指哨", en: "Finger Whistle", type: "忍具 · 口哨", origin: "狮子猿体内取出的纤细手指", desc: "佛雕师年轻时的同伴「爱哭鬼」留下的指哨，可令野兽狂乱、也能让狮子猿僵直。一件道具把佛雕师、菩萨谷、狮子猿与「修罗」串成一条隐线。" },
+  { id: "sk-everblossom", work: "sekiro", name: "馨香水莲与结宿之石", en: "Everblossom & Shelter Stone", type: "仪式素材", origin: "菩萨谷 / 水生村", desc: "点燃「源之香」所需的白花与熏香材料。前者由狮子猿守护，后者藏在被雾困住的苇名之底；两者共同指向「源之宫」这条通往龙胤源头的路。" },
+  { id: "sk-dragon-tears", work: "sekiro", name: "龙泪", en: "Dragon's Tear", type: "仪式素材 · 结局关键", origin: "击败樱龙后取得", desc: "断绝不死仪式的最后一味。把龙泪交给九郎，或以永真与变若之子之法改换仪式，会分别走向「斩断不死」「净化」「龙之还乡」三种结局。" },
+  { id: "sk-gourd", work: "sekiro", name: "治疗葫芦", en: "Healing Gourd", type: "回复道具", origin: "佛雕师 / 各地种子", desc: "与系列「原素瓶」对应的回复道具，可由葫芦种子提升使用次数。它同时与「龙咳」机制相扣：回生用得越多，越多人因你而病。" },
+
+  /* ── 血源诅咒 ── */
+  { id: "bb-saw-cleaver", work: "bloodborne", name: "锯肉刀", en: "Saw Cleaver", type: "变形武器 · 猎人", origin: "猎人梦境初始三选一", desc: "折叠时为短刃、展开为长锯的猎人制式武器，是《血源诅咒》封面级的标志物。变形攻击与「变形斩」的节奏，定义了本作比黑魂更激进的战斗。" },
+  { id: "bb-hunter-axe", work: "bloodborne", name: "猎人斧", en: "Hunter Axe", type: "变形武器", origin: "猎人梦境初始三选一", desc: "展开后成为长柄大斧，以广范围横扫见长。与锯肉刀、螺纹手杖并称「初始三神器」，分别对应力量、范围与技巧三条路线。" },
+  { id: "bb-threaded-cane", work: "bloodborne", name: "螺纹手杖", en: "Threaded Cane", type: "变形武器", origin: "猎人梦境初始三选一", desc: "合拢是绅士手杖，展开化作带刃长鞭。它最贴合亚南的维多利亚气质：体面之下，藏着一柄带刃的长鞭。" },
+  { id: "bb-burial-blade", work: "bloodborne", name: "送葬之刃", en: "Burial Blade", type: "镰刀 · 技巧", origin: "以杰尔曼的灵魂 / 结局相关", desc: "第一位猎人以天外陨石打造的镰刀，被称作「为送葬而生的刃」。它与狩猎的起源、以及「猎人最终也要被猎杀」的誓约互为表里。" },
+  { id: "bb-ludwig-holy-blade", work: "bloodborne", name: "路德维希圣剑", en: "Ludwig's Holy Blade", type: "变形大剑", origin: "以「剑猎人徽章」在猎人梦境购得", desc: "治愈教会第一位猎人的制式圣剑，收起为直剑、合鞘为大剑。它与《老猎人》里那位兽化的路德维希形成最残忍的对照：剑还在，持剑的人已认不出自己。" },
+  { id: "bb-holy-moonlight-sword", work: "bloodborne", name: "月光圣剑", en: "Holy Moonlight Sword", type: "变形大剑 · 奥术", origin: "《老猎人》击败路德维希后与断头对话", desc: "「月光大剑」在亚南的形态：翡翠般泛光、挥舞时洒出光粒，被视为系列最漂亮的一把。道具说明称路德维希正是靠它在兽化后仍保住了人性。" },
+  { id: "bb-blade-of-mercy", work: "bloodborne", name: "慈悲之刃", en: "Blade of Mercy", type: "变形双刀 · 技巧", origin: "乌鸦猎人艾琳支线 / 誓约", desc: "由陨石碎片磨成的短刃，一分为二后成为双刀。它是「猎人狩猎者」的传家之物：专门用来让陷入疯狂的同伴「安息」，故名慈悲。" },
+  { id: "bb-rakuyo", work: "bloodborne", name: "落叶", en: "Rakuyo", type: "变形双刀", origin: "《老猎人》渔村井中拾取", desc: "钟楼的玛利亚投入井中的双刀，可拆为一对。中文版曾把 Rakuyo 误译为「洛阳」，日文原字即「落葉」——这个名字本身就是她选择终局的方式。" },
+  { id: "bb-kos-parasite", work: "bloodborne", name: "科斯寄生虫", en: "Kos Parasite", type: "特殊武器 · 奥术", origin: "《老猎人》击败科斯孤儿", desc: "从噩梦尽头取回的、形似幼虫的活体武器，装备后会改变「乳母之乳」等姿态与奥术招式。它几乎是整部作品宇宙恐怖的浓缩物。" },
+  { id: "bb-kirkhammer", work: "bloodborne", name: "教会之锤", en: "Kirkhammer", type: "变形武器 · 力量", origin: "教会商店购得", desc: "剑与巨锤合一的教会制式武器，象征治愈教会「以信仰之名行暴力之实」的两面。与圣剑同为教会猎人工场体系的产物。" },
+  { id: "bb-evelyn", work: "bloodborne", name: "伊芙琳", en: "Evelyn", type: "火器 · 血质", origin: "该隐赫斯特城堡", desc: "血族专用的优雅手枪，血质补正极高。它与该隐赫斯特、污秽血族、洛格力斯的处刑队一起，补全了「血」在亚南的另一条谱系。" },
+  { id: "bb-stake-driver", work: "bloodborne", name: "打桩机", en: "Stake Driver", type: "变形武器 · 力量", origin: "与退休猎人裘拉和解后取得", desc: "以压缩火药轰出桩钉的重型武器，蓄力一击的爆发力闻名。它的取得方式尤其温柔：只有不伤害旧亚南的野兽，裘拉才会放下机枪。" },
+  { id: "bb-third-cord", work: "bloodborne", name: "三分之一脐带", en: "One Third of Umbilical Cord", type: "关键道具 · 结局", origin: "游戏中散落四处，可取得其中三条", desc: "上位者降生时留下的脐带残片，被描述为「令人看见无法言说之物的眼」。在月之血姬面前吞下三条，便能看穿梦境、击败它并迎来「童年开端」结局——全作最隐秘的一条路。" }
+];
